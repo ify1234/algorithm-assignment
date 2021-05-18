@@ -36,6 +36,18 @@ console.log(convertFahrToCelsius({temp: 0}));
 
 
 // 2. Write a function named "checkYuGiOh" that takes a number, n, as an argument, creates an array of numbers from 1 to n and replaces factors of 2, 3, and 5 with "yu", "gi" and "oh", logs the resulting array to the console then returns the resulting array.
+// Note:
+
+// - for strings that have multiple factors, use hyphens as separators
+// e.g 10 === "yu-oh", 30 === "yu-gi-oh"
+// - perform checks on your input and return `invalid parameter: ${parameter}` if an invalid parameter - i.e. a string that can't be converted to a number or another data type - is passed. 
+// Use the following cases as guides:
+
+// - checkYuGiOh(10) should return [1, "yu", "gi", "yu", "oh", "yu-gi", 7, "yu", "gi", "yu-oh"]
+// - checkYuGiOh("5") should return [1, "yu", "gi", "yu", "oh"]
+// - checkYuGiOh("fizzbuzz is meh") should return `invalid parameter: "fizzbuzz is meh"`
+
+
 
 function checkYuGiOh(n) {
   var arr = [...Array(n).keys()]
@@ -61,54 +73,9 @@ function checkYuGiOh(n) {
     } else {
       newList.push(data)
     }
-      
-   
-
-    // if ((arr[i]%2 )=== 0) {
-    //   newList.push("yu");
-    // }else if ((arr[i]%3 )=== 0 ) {
-    //   newList.push("gi")
-    // }
-    //  else if ((arr[i]%5 )=== 0) {
-    //   newList.push("oh")
-    // } else {
-      
-    //    newList.push(arr[i])
-    // }
-
 
   }
  
-
   return newList;
-
-
 }
 console.log(checkYuGiOh(60))
-
-// Note:
-
-// - for strings that have multiple factors, use hyphens as separators
-// e.g 10 === "yu-oh", 30 === "yu-gi-oh"
-// - perform checks on your input and return `invalid parameter: ${parameter}` if an invalid parameter - i.e. a string that can't be converted to a number or another data type - is passed. 
-// Use the following cases as guides:
-
-// - checkYuGiOh(10) should return [1, "yu", "gi", "yu", "oh", "yu-gi", 7, "yu", "gi", "yu-oh"]
-// - checkYuGiOh("5") should return [1, "yu", "gi", "yu", "oh"]
-// - checkYuGiOh("fizzbuzz is meh") should return `invalid parameter: "fizzbuzz is meh"`
-
-
-// const checkYuGiOh = function(n) {
- 
-//   return [n + n];
-// }
-// console.log(checkYuGiOh(10));
-
-// const checkYuGiOh = (n) => {
-//   let output = 10;
-//   for (let counter = 0; counter <= n; counter++) {
-//     output += n
-//   }
-//   return [output];
-// };
-// console.log(checkYuGiOh(100))
