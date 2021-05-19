@@ -18,18 +18,22 @@
 
 function convertFahrToCelsius(F) {
   let celsius = (F - 32) / 1.8;
-  let message = `${F} is not a valid number but a/an ${typeof (F)}`;
   let n = celsius.toFixed(4);
-  if ( typeof F === "number" || typeof F === "string") {
+ if ( typeof F === "number") {
     return n;
-  } else {
-    return message;
   }
-}
+  if (typeof F === "object" || typeof F ==="string"){
+    let content = JSON.stringify(F)
+    return `${content} is not a valid number but a/an ${typeof(F)}`
+  }
+
+  }
+
 
 // type numbers here
 console.log(convertFahrToCelsius(2));
 console.log(convertFahrToCelsius("1"));
+console.log(convertFahrToCelsius("true"));
 console.log(convertFahrToCelsius([1, 2, 3]));
 console.log(convertFahrToCelsius({temp: 0}));
 
